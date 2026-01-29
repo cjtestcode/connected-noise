@@ -1,0 +1,6 @@
+_sourceCategory=prod/webapp
+| json "path", "responseTimeMs" as path, responseTimeMs nodrop
+| where path = "/api/data" and responseTimeMs > 3000
+| timeslice 10m
+| count as slow_count by _timeslice
+| where slow_count > 5
