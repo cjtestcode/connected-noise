@@ -127,7 +127,7 @@ data "archive_file" "codetest" {
 resource "aws_lambda_function" "codetest" {
   filename      = data.archive_file.codetest.output_path
   role          = aws_iam_role.lambda_role.arn
-  handler   = "app.lambda_handler"
+  handler   = "lambda.lambda_handler"
   function_name = "codetest-lambda"
   runtime = "python3.12"
   source_code_hash   = data.archive_file.codetest.output_base64sha256
