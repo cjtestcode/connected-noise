@@ -1,0 +1,1 @@
+I was not sure how sumologic would communicate with lambda so I assumed a webhook set up that will trigger a lambda through an API gateway. This set, I think, gurantees comms from a sumologic webhook to lambda
